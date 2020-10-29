@@ -1,15 +1,15 @@
 package AvajLuncher;
 
-import Methods.Reading;
+import Method.reading;
 
 import java.io.FileNotFoundException;
 
-public class Main {
+public class main {
 
     public static void main(String[] args) throws FileNotFoundException {
 	// write your code here
         if(args.length == 1){
-            Reading.scan();
+          reading.scan();
         }
     }
 }
