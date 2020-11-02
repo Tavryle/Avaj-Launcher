@@ -1,6 +1,6 @@
 package Interface;
 
 public interface Flyable{
-    public void updateCondition();
-    public void registerTower(WeatherTower WeatherTower);
+    void updateCondition();
+    void registerTower(WeatherTower WeatherTower);
 }

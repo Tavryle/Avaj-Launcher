@@ -1,4 +1,4 @@
-package AvajLuncher;
+package AvajLauncher;
 
 import Method.reading;
 
@@ -8,8 +8,9 @@ public class main {
 
     public static void main(String[] args) throws FileNotFoundException {
 	// write your code here
+        reading read = new reading();
         if(args.length == 1){
-          reading.scan();
+          read.scan();
         }
     }
 }
