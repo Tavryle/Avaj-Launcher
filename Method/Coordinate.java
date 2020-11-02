@@ -1,12 +1,12 @@
 package Method;
 
 
-public class Coordinates{
+public class Coordinate {
      private int longitude;
      private int latitude;
      private int height;
 
-     Coordinates(int longitude,int latitude, int height){
+     Coordinate(int longitude, int latitude, int height){
          this.longitude = longitude;
          this.latitude = latitude;
          this.height = height;

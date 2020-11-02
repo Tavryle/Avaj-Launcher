@@ -1,17 +1,23 @@
 package Method;
 
+import java.util.Random;
+import java.util.UUID;
+
 public class Aircraft{
     protected long id;
     protected String name;
-    protected Coordinates coordinates;
+    protected Coordinate coordinate;
     private static long idCounter;
 
-    protected long Aircraft(String name, Coordinate coordinates){
-        this.name = name;
-        this.coordinates = coordinates;
+    public Aircraft(){}
 
+    protected Aircraft(String name, Coordinate coordinates){
+        this.name = name;
+        this.coordinate = coordinates;
+        Random random = new Random();
+        this.id = random.nextInt();
     }
-    private long nextId(){
-        //get the next id
+    private Long nextId(){
+        return null;
     }
 }

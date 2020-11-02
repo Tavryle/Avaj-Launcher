@@ -1,10 +1,13 @@
 package Method;
-import java.utile.ArrayList;
+import Interface.Flyable;
 
-public class Tower{
-    ArrayList<String> observers = new ArrayList<String>();
+import java.util.ArrayList;
+import java.util.Collection;
 
-    public void register(flyable Flyable);
-    public void unregister(flyable Flyable);
-    protected void conditionsChanged();
+public abstract class Tower{
+    private Collection observers = new ArrayList<Flyable>();
+
+    public abstract void register(Flyable flyable);
+    public abstract void unregister(Flyable flyable);
+    protected abstract void conditionsChanged();
 }
