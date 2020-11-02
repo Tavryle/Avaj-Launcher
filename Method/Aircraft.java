@@ -6,6 +6,12 @@ public class Aircraft{
     protected Coordinates coordinates;
     private static long idCounter;
 
-    protected long Aircraft(String name, Coordinate coordinates);
-    private long nextId();
+    protected long Aircraft(String name, Coordinate coordinates){
+        this.name = name;
+        this.coordinates = coordinates;
+
+    }
+    private long nextId(){
+        //get the next id
+    }
 }
