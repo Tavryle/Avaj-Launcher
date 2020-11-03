@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class reading{
     public void scan() throws FileNotFoundException {
         try {
-            File file = new File("test.txt");
+            File file = new File("scenario.txt");
             Scanner scanner = new Scanner(file);
             System.out.println(scanner.next());
         }catch (Exception e){

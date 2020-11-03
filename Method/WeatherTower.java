@@ -8,26 +8,10 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class WeatherTower extends Tower{
-    public String getWeather(Coordinate Coordinate){
-
-
-
-
-        return null;
+    public String getWeather(Coordinate coordinate){
+        return WeatherProvider.getProvider().getCurrentWeather(coordinate);//return the result of a method
     }
+     void  changeWeather(){
 
-    @Override
-    public void register(Flyable flyable) {
-
-    }
-
-    @Override
-    public void unregister(Flyable flyable) {
-
-    }
-
-    @Override
-    protected void conditionsChanged() {
-
-    }
+     }
 }

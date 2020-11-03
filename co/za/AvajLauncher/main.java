@@ -1,4 +1,4 @@
-package AvajLauncher;
+package co.za.AvajLauncher;
 
 import Method.reading;
 
