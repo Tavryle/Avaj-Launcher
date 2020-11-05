@@ -12,6 +12,12 @@ public class WeatherTower extends Tower{
         return WeatherProvider.getProvider().getCurrentWeather(coordinate);//return the result of a method
     }
      void  changeWeather(){
-
+        conditionsChanged();
      }
+
+    @Override
+    public void register(Flyable flyable) {
+        getObservers().add(flyable);
+        flyable.registerTower(this);
+    }
 }

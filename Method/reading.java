@@ -9,7 +9,8 @@ public class reading{
         try {
             File file = new File("scenario.txt");
             Scanner scanner = new Scanner(file);
-            System.out.println(scanner.next());
+            while (scanner.hasNextLine())
+                System.out.println(scanner.nextLine());
         }catch (Exception e){
             System.out.println("Something went wrong with reading the file");
         }

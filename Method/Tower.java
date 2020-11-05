@@ -4,12 +4,10 @@ import Interface.Flyable;
 import java.util.ArrayList;
 import java.util.Collection;
 //observer design pattern
-public class Tower{
+public abstract class Tower{
     private Collection<Flyable> observers = new ArrayList<>();
 
-    public final void register(Flyable flyable){
-        observers.add(flyable);
-    }
+    public abstract void register(Flyable flyable);
     public final void unregister(Flyable flyable){
         observers.remove(flyable);
     }
@@ -18,6 +16,9 @@ public class Tower{
         {
           f.updateCondition();
         }
+    }
+    protected Collection<Flyable> getObservers(){
+        return observers;
     }
 
 }

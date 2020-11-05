@@ -3,7 +3,7 @@ package Method;
 import java.util.Random;
 import java.util.UUID;
 
-public class Aircraft{
+public abstract class Aircraft{
     protected long id;
     protected String name;
     protected Coordinate coordinate;
@@ -16,8 +16,9 @@ public class Aircraft{
         this.coordinate = coordinates;
         Random random = new Random();
         this.id = random.nextInt();
+        nextId();
     }
     private Long nextId(){
-        return null;
+        return idCounter++;
     }
 }
