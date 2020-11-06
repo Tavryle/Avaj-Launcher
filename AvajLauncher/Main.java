@@ -32,10 +32,11 @@ public class Main {
         Tower weatherTower = new WeatherTower();
         try {
             if(args.length == 1) {
-                File file = new File("gfhg.txt");
+                File file = new File(args[0]);
                 Scanner scanner = new Scanner(file);
                 if(scanner.hasNextLine()){
                     numberOfWeatherChanges = scanner.nextInt();
+                    scanner.nextLine();
                 }
                 while (scanner.hasNextLine()) {
                     Aircrafts.add(extractFlyable(scanner.nextLine()));
