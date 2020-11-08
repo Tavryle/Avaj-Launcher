@@ -25,6 +25,7 @@ public class Main {
     }
     public static void main(String[] args) {
 	// write your code here
+        FileUtil.createNewFile();
         int numberOfWeatherChanges = 0;
         Collection<Flyable> aircrafts = new ArrayList<>();
         WeatherProvider weatherProvider = WeatherProvider.getProvider();

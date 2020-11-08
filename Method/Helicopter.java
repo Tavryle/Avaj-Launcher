@@ -16,26 +16,29 @@ public class Helicopter extends Aircraft implements Flyable {
             case "SNOW":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude(),validateHeight(coordinate.getHeight() - 12));
+                FileUtil.writeToFile(this.getClass().getName() + "#" + name + id + ":SNOW The blade are breaking!");
             }
             break;
             case "SUN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 10,coordinate.getLatitude(),validateHeight(coordinate.getHeight() + 2));
+                FileUtil.writeToFile(this.getClass().getName() + "#" + name + id + ":SUN The blade are breaking!");
             }
             break;
             case "RAIN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 5,coordinate.getLatitude(),validateHeight(coordinate.getHeight()));
+                FileUtil.writeToFile(this.getClass().getName() + "#" + name + id + ":RAIN The blade are breaking!");
             }
             case "FOG":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 1,coordinate.getLatitude(),validateHeight(coordinate.getHeight()));
+                FileUtil.writeToFile(this.getClass().getName() + "#" + name + id + ":FOG The blade are breaking!");
             }
             break;
             default:
                 throw new RuntimeException("Cannot find weather condition.");
         }
-        System.out.println(this.getClass().getName() + "#" + name + id + ": The blade are breaking!");
     }
     @Override
     public void registerTower(WeatherTower weatherTower){
@@ -45,7 +48,7 @@ public class Helicopter extends Aircraft implements Flyable {
     private int validateHeight(int height){
         if(height <= 0){
             weatherTower.unregister(this);
-            System.out.println(name + " Landing " +coordinate.toString());
+            FileUtil.writeToFile(name + " Landing " +coordinate.toString());
             return 0;
         }
         else if(height > 100){
