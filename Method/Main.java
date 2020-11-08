@@ -1,7 +1,7 @@
-package AvajLauncher;
+package Method;
 
 import Interface.Flyable;
-import Method.*;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -25,8 +25,8 @@ public class Main {
     }
     public static void main(String[] args) {
 	// write your code here
-        int numberOfWeatherChanges;
-        Collection<Flyable> Aircrafts = new ArrayList<>();
+        int numberOfWeatherChanges = 0;
+        Collection<Flyable> aircrafts = new ArrayList<>();
         WeatherProvider weatherProvider = WeatherProvider.getProvider();
         Coordinate randomCooridnate;
         Tower weatherTower = new WeatherTower();
@@ -39,7 +39,13 @@ public class Main {
                     scanner.nextLine();
                 }
                 while (scanner.hasNextLine()) {
-                    Aircrafts.add(extractFlyable(scanner.nextLine()));
+                    aircrafts.add(extractFlyable(scanner.nextLine()));
+                }
+                for(Flyable aircraft: aircrafts) {
+                    weatherTower.register(aircraft);
+                }
+                for(int i = 0;i < numberOfWeatherChanges;i++){
+                    ((WeatherTower)weatherTower).changeWeather();//down casting
                 }
             }
             else
