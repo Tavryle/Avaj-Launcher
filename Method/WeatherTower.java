@@ -21,7 +21,7 @@ public class WeatherTower extends Tower{
         flyable.registerTower(this);
         String fullClassName = flyable.getClass().getName();
         String finaleName = fullClassName.substring(fullClassName.lastIndexOf('.') + 1);
-        FileUtil.writeToFile( finaleName + " " +flyable.getId() +": Aircraft is registered ");
+        FileUtil.writeToFile( finaleName + " " + "#" + flyable.getName() + "(" + flyable.getId() + ")" +": Aircraft is registered ");
         //FileUtil.writeToFile(flyable.getClass().getName() + ": Aircraft is registered");
     }
 }

@@ -16,24 +16,24 @@ public class Helicopter extends Aircraft{
             case "SNOW":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude(),validateHeight(coordinate.getHeight() - 12));
-                FileUtil.writeToFile("Helicopter " + "#" + name +" "+ id + ":SNOW The blade are breaking!");
+                FileUtil.writeToFile("Helicopter " + "#" + name +" "+ "(" + id + ")" + ":SNOW The blade are breaking!");
             }
             break;
             case "SUN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 10,coordinate.getLatitude(),validateHeight(coordinate.getHeight() + 2));
-                FileUtil.writeToFile("Helicopter " + "#" + name +" " + id + ":SUN The blade are breaking!");
+                FileUtil.writeToFile("Helicopter " + "#" + name +" " + "(" + id + ")" + ":SUN The blade are breaking!");
             }
             break;
             case "RAIN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 5,coordinate.getLatitude(),validateHeight(coordinate.getHeight()));
-                FileUtil.writeToFile("Helicopter " + "#" + name + " "+ id + ":RAIN The blade are breaking!");
+                FileUtil.writeToFile("Helicopter " + "#" + name + " "+ "(" + id + ")" + ":RAIN The blade are breaking!");
             }
             case "FOG":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 1,coordinate.getLatitude(),validateHeight(coordinate.getHeight()));
-                FileUtil.writeToFile("Helicopter " + "#" + name + " " + id + ":FOG The blade are breaking!");
+                FileUtil.writeToFile("Helicopter " + "#" + name + " " + "(" + id + ")" + ":FOG The blade are breaking!");
             }
             break;
             default:
@@ -48,7 +48,7 @@ public class Helicopter extends Aircraft{
     private int validateHeight(int height){
         if(height <= 0){
             weatherTower.unregister(this);
-            FileUtil.writeToFile("Helicopter " + name + " Landing ");
+            FileUtil.writeToFile("Helicopter " + name + " " + "(" + id + ")" +" Landing ");
             return 0;
         }
         else if(height > 100){

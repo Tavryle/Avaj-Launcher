@@ -10,10 +10,10 @@ public class WeatherProvider {
 
     }
     public static WeatherProvider getProvider(){
-        return weatherProvider;// variable has a value already that's why there's no need to se tit.
+        return weatherProvider;// variable has a value already that's why there's no need to set it.
     }
     public String getCurrentWeather(Coordinate coordinate) {
-        Random random = new Random(100);
+        Random random = new Random();
         if (coordinate.getHeight() > 0 && coordinate.getHeight() <= 24) {
             return WEATHER[random.nextInt(4)];
         } else if (coordinate.getHeight() > 24 && coordinate.getHeight() <= 49) {
