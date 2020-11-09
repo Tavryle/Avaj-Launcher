@@ -2,7 +2,7 @@ package Method;
 
 import Interface.Flyable;
 
-public class Jetplane extends Aircraft implements Flyable {
+public class Jetplane extends Aircraft{
     private WeatherTower weatherTower;
     Jetplane(String name, Coordinate coordinate){
         super(name, coordinate);
@@ -15,27 +15,27 @@ public class Jetplane extends Aircraft implements Flyable {
             case "SNOW":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude(),validateHeight(coordinate.getHeight() - 7));
-                FileUtil.writeToFile("Jetplane " + "#" + name + id + ":SNOW Can you feel the turbulence");
+                FileUtil.writeToFile("Jetplane " + "#" + name + " " +id + ":SNOW Can you feel the turbulence");
 
             }
             break;
             case "SUN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude() + 10,validateHeight(coordinate.getHeight() + 2));
-                FileUtil.writeToFile("Jetplane " + "#" + name + id + ":SUN Can you feel the turbulence");
+                FileUtil.writeToFile("Jetplane " + "#" + name + " " + id + ":SUN Can you feel the turbulence");
 
             }
             break;
             case "RAIN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude() + 5,validateHeight(coordinate.getHeight()));
-                FileUtil.writeToFile("Jetplane " + "#" + name + id + ":RAIN Can you feel the turbulence");
+                FileUtil.writeToFile("Jetplane " + "#" + name + " " + id + ":RAIN Can you feel the turbulence");
 
             }
             case "FOG":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude() + 1,validateHeight(coordinate.getHeight()));
-                FileUtil.writeToFile("Jetplane " + "#" + name + id + ":FOG Can you feel the turbulence");
+                FileUtil.writeToFile("Jetplane " + "#" + name + " " + id + ":FOG Can you feel the turbulence");
 
             }
             break;

@@ -2,7 +2,7 @@ package Method;
 
 import Interface.Flyable;
 
-public class Helicopter extends Aircraft implements Flyable {
+public class Helicopter extends Aircraft{
     private WeatherTower weatherTower;
 
     Helicopter(String name, Coordinate coordinate){
@@ -16,24 +16,24 @@ public class Helicopter extends Aircraft implements Flyable {
             case "SNOW":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude(),validateHeight(coordinate.getHeight() - 12));
-                FileUtil.writeToFile("Helicopter " + "#" + name + id + ":SNOW The blade are breaking!");
+                FileUtil.writeToFile("Helicopter " + "#" + name +" "+ id + ":SNOW The blade are breaking!");
             }
             break;
             case "SUN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 10,coordinate.getLatitude(),validateHeight(coordinate.getHeight() + 2));
-                FileUtil.writeToFile("Helicopter " + "#" + name + id + ":SUN The blade are breaking!");
+                FileUtil.writeToFile("Helicopter " + "#" + name +" " + id + ":SUN The blade are breaking!");
             }
             break;
             case "RAIN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 5,coordinate.getLatitude(),validateHeight(coordinate.getHeight()));
-                FileUtil.writeToFile("Helicopter " + "#" + name + id + ":RAIN The blade are breaking!");
+                FileUtil.writeToFile("Helicopter " + "#" + name + " "+ id + ":RAIN The blade are breaking!");
             }
             case "FOG":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 1,coordinate.getLatitude(),validateHeight(coordinate.getHeight()));
-                FileUtil.writeToFile("Helicopter " + "#" + name + id + ":FOG The blade are breaking!");
+                FileUtil.writeToFile("Helicopter " + "#" + name + " " + id + ":FOG The blade are breaking!");
             }
             break;
             default:

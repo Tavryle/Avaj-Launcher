@@ -2,7 +2,7 @@ package Method;
 
 import Interface.Flyable;
 
-public class Baloon extends Aircraft implements  Flyable{
+public class Baloon extends Aircraft{
     private WeatherTower weatherTower;
 
     Baloon(String name, Coordinate coordinate){
@@ -16,27 +16,27 @@ public class Baloon extends Aircraft implements  Flyable{
             case "SNOW":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude(),validateHeight(coordinate.getHeight() - 15));
-                FileUtil.writeToFile("Baloon " + "#" + name + id + ":SNOW Pop!!!!!!!");
+                FileUtil.writeToFile("Baloon " + "#" + name + " " + "(" + id + ")" + ":SNOW Pop!!!!!!!");
 
             }
             break;
             case "SUN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 2,coordinate.getLatitude(),validateHeight(coordinate.getHeight() + 4));
-                FileUtil.writeToFile("Baloon " + "#" + name + id + ":SUN Pop!!!!!!!");
+                FileUtil.writeToFile("Baloon " + "#" + name + " " + id + ":SUN Pop!!!!!!!");
 
             }
             break;
             case "RAIN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude() ,validateHeight(coordinate.getHeight() - 5));
-                FileUtil.writeToFile("Baloon " + "#" + name + id + ":RAIN Pop!!!!!!!");
+                FileUtil.writeToFile("Baloon " + "#" + name + " " + id + ":RAIN Pop!!!!!!!");
 
             }
             case "FOG":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude(),validateHeight(coordinate.getHeight() - 3));
-                FileUtil.writeToFile("Baloon " + "#" + name + id + ":FOG Pop!!!!!!!");
+                FileUtil.writeToFile("Baloon " + "#" + name + " "+ id + ":FOG Pop!!!!!!!");
 
             }
             break;
