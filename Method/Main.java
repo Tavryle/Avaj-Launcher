@@ -35,15 +35,15 @@ public class Main {
             if(args.length == 1) {
                 File file = new File(args[0]);
                 Scanner scanner = new Scanner(file);
-                if(scanner.hasNextLine()){
-                    numberOfWeatherChanges = scanner.nextInt();
-                    if(numberOfWeatherChanges > 0){
-                        scanner.nextLine();
+                try {
+                    if (scanner.hasNextLine()) {
+                        numberOfWeatherChanges = scanner.nextInt();
+                        if (numberOfWeatherChanges > 0) {
+                            scanner.nextLine();
+                        }
                     }
-                    else{
-                        System.out.println("no amount of weather changes");
-
-                    }
+                }catch (Exception e){
+                    System.out.println("no amount of times the simulation must run");
                 }
                 while (scanner.hasNextLine()) {
                     aircrafts.add(extractFlyable(scanner.nextLine()));
