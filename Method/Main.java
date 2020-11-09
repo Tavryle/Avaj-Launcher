@@ -37,7 +37,13 @@ public class Main {
                 Scanner scanner = new Scanner(file);
                 if(scanner.hasNextLine()){
                     numberOfWeatherChanges = scanner.nextInt();
-                    scanner.nextLine();
+                    if(numberOfWeatherChanges > 0){
+                        scanner.nextLine();
+                    }
+                    else{
+                        System.out.println("no amount of weather changes");
+
+                    }
                 }
                 while (scanner.hasNextLine()) {
                     aircrafts.add(extractFlyable(scanner.nextLine()));

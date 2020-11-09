@@ -13,7 +13,7 @@ public class WeatherProvider {
         return weatherProvider;// variable has a value already that's why there's no need to se tit.
     }
     public String getCurrentWeather(Coordinate coordinate) {
-        Random random = new Random();
+        Random random = new Random(100);
         if (coordinate.getHeight() > 0 && coordinate.getHeight() <= 24) {
             return WEATHER[random.nextInt(4)];
         } else if (coordinate.getHeight() > 24 && coordinate.getHeight() <= 49) {

@@ -15,7 +15,7 @@ public abstract class Aircraft{
         this.name = name;
         this.coordinate = coordinates;
         Random random = new Random();
-        this.id = random.nextInt();
+        this.id = random.nextInt(10);
         nextId();
     }
     private Long nextId(){

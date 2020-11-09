@@ -12,7 +12,9 @@ public abstract class Tower{
     public abstract void register(Flyable flyable);
     public final void unregister(Flyable flyable){
         observers.remove(flyable);
-        FileUtil.writeToFile( flyable.getClass().getName() + ": Aircraft is unregistered ");
+        String fullClassName = flyable.getClass().getName();
+        String finaleName = fullClassName.substring(fullClassName.lastIndexOf('.') + 1);
+        FileUtil.writeToFile( finaleName + ": Aircraft is unregistered ");
     }
     protected void conditionsChanged(){
         for(Flyable f:observers )

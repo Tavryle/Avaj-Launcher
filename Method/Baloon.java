@@ -16,27 +16,27 @@ public class Baloon extends Aircraft implements  Flyable{
             case "SNOW":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude(),validateHeight(coordinate.getHeight() - 15));
-                FileUtil.writeToFile(this.getClass().getName() + "#" + name + id + ":SNOW Pop!!!!!!!");
+                FileUtil.writeToFile("Baloon " + "#" + name + id + ":SNOW Pop!!!!!!!");
 
             }
             break;
             case "SUN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude() + 2,coordinate.getLatitude(),validateHeight(coordinate.getHeight() + 4));
-                FileUtil.writeToFile(this.getClass().getName() + "#" + name + id + ":SUN Pop!!!!!!!");
+                FileUtil.writeToFile("Baloon " + "#" + name + id + ":SUN Pop!!!!!!!");
 
             }
             break;
             case "RAIN":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude() ,validateHeight(coordinate.getHeight() - 5));
-                FileUtil.writeToFile(this.getClass().getName() + "#" + name + id + ":RAIN Pop!!!!!!!");
+                FileUtil.writeToFile("Baloon " + "#" + name + id + ":RAIN Pop!!!!!!!");
 
             }
             case "FOG":
             {
                 newCoordinate = new Coordinate(coordinate.getLongitude(),coordinate.getLatitude(),validateHeight(coordinate.getHeight() - 3));
-                FileUtil.writeToFile(this.getClass().getName() + "#" + name + id + ":FOG Pop!!!!!!!");
+                FileUtil.writeToFile("Baloon " + "#" + name + id + ":FOG Pop!!!!!!!");
 
             }
             break;
@@ -51,7 +51,7 @@ public class Baloon extends Aircraft implements  Flyable{
     private int validateHeight(int height){
         if(height <= 0){
             weatherTower.unregister(this);
-            FileUtil.writeToFile(name + " Landing " +coordinate.toString());
+            FileUtil.writeToFile( "Baloon " + name + " Landing ");
             return 0;
         }
         else if(height > 100){
